@@ -1,0 +1,54 @@
+{
+  "session_id": "MULTIVIEW_20260701_200310",
+  "session_dir": "data\\pointcloud_clean\\multiview\\MULTIVIEW_20260701_200310",
+  "view_count": 3,
+  "target_view_count": 4,
+  "yaw_angles_deg": [
+    0.0,
+    90.0,
+    180.0,
+    270.0
+  ],
+  "merged_path": "data\\pointcloud_clean\\multiview\\MULTIVIEW_20260701_200310\\merged_multiview.ply",
+  "views": [
+    {
+      "index": 1,
+      "yaw_deg": 0.0,
+      "name": "camera_view_01",
+      "raw_path": "data\\pointcloud_raw\\OPENNI_20260701_200300\\scan_P0p0_Y0p0_F000136_200309.ply",
+      "object_path": "data\\pointcloud_clean\\multiview\\MULTIVIEW_20260701_200310\\object_view_01_Y0p0.ply",
+      "raw_point_count": 94689,
+      "object_point_count": 3256
+    },
+    {
+      "index": 2,
+      "yaw_deg": 90.0,
+      "name": "camera_view_02",
+      "raw_path": "data\\pointcloud_raw\\OPENNI_20260701_200300\\scan_P0p0_Y0p0_F001397_200429.ply",
+      "object_path": "data\\pointcloud_clean\\multiview\\MULTIVIEW_20260701_200310\\object_view_02_Y90p0.ply",
+      "raw_point_count": 40703,
+      "object_point_count": 2035
+    },
+    {
+      "index": 3,
+      "yaw_deg": 180.0,
+      "name": "camera_view_03",
+      "raw_path": "data\\pointcloud_raw\\OPENNI_20260701_200300\\scan_P0p0_Y0p0_F001710_200449.ply",
+      "object_path": "data\\pointcloud_clean\\multiview\\MULTIVIEW_20260701_200310\\object_view_03_Y180p0.ply",
+      "raw_point_count": 54835,
+      "object_point_count": 3378
+    }
+  ],
+  "merge": {
+    "input_view_count": 3,
+    "used_view_count": 3,
+    "input_point_count": 8669,
+    "output_point_count": 3470,
+    "yaw_angles_used": [
+      0.0,
+      90.0,
+      180.0
+    ],
+    "message": "Đã ghép point cloud nhiều góc: 3/3 view | 8669 điểm đầu vào → 3470 điểm sau merge | góc=[0.0, 90.0, 180.0]"
+  }
+}

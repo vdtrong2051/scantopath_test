@@ -1,0 +1,49 @@
+BÁO CÁO XUẤT KẾT QUẢ SCAN-TO-PATH
+====================================
+
+[THÔNG TIN CHUNG]
+Mã export      : PJ1_20260515_005_FILE_SAMPLE_OK
+Thời gian xuất : 2026-05-15 15:52:00
+Thư mục        : data\exports\PJ1_20260515_005_FILE_SAMPLE_OK
+Chế độ đầu vào : FILE
+Tên mẫu vật    : SAMPLE
+Trạng thái     : OK
+
+[QUY TRÌNH XỬ LÝ]
+1. Nạp / Quét mẫu 3D
+2. Lọc nhiễu đám mây điểm
+3. Tính pháp tuyến bề mặt
+4. Tạo bản đồ bề mặt 3D
+5. Sinh đường Zigzag
+6. Xuất kết quả
+
+[BẢN ĐỒ BỀ MẶT 3D]
+Phương pháp tạo mesh      : poisson
+Số điểm đầu vào           : 27375
+Số điểm dùng để dựng mesh : 27328
+Số đỉnh mesh              : 22696
+Số mặt tam giác           : 44988
+Tâm mô hình               : [1.0834963389141166, -1.1189691069008205, -0.33363856044706175]
+Kích thước mô hình        : [264.13155793665044, 205.46083134994507, 52.63202808703987]
+
+[ĐƯỜNG DẪN ZIGZAG]
+Phương pháp sinh đường : safe_mesh_slicing
+Số điểm đường dẫn      : 5350
+Số dải quét            : 39
+Số đoạn đường dẫn      : 217
+Chiều dài xấp xỉ       : 15448.440754
+Khoảng cách dải quét   : 5.276488
+Khoảng cách lấy mẫu    : 2.110595
+Ngưỡng tách đoạn       : 14.510341
+
+[DANH SÁCH FILE]
+1. 00_summary.txt   - Báo cáo tóm tắt dạng TXT
+2. 00_summary.json  - Metadata dạng JSON
+3. 01_surface_mesh.ply  - Mesh/bản đồ bề mặt 3D
+4. 02_zigzag_path.csv   - Đường dẫn Zigzag dạng CSV
+
+[GHI CHÚ]
+- File CSV chứa các cột: segment_id, point_id, x, y, z, nx, ny, nz.
+- x, y, z là tọa độ điểm đường dẫn.
+- nx, ny, nz là vector pháp tuyến tại điểm đường dẫn.
+- Dữ liệu này dùng cho bước mô phỏng hoặc phát triển điều khiển robot phun sơn sau này.

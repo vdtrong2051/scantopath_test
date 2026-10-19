@@ -1,0 +1,625 @@
+/* =========================================================
+   Scan-to-Path - 3D Surface Mapping Dark HMI Theme
+   Focus:
+   - RGB-D Scan
+   - Edge AI Mask
+   - Point Cloud Processing
+   - Surface Map
+   - Normal Estimation
+   - Zigzag / Contour Path Preview
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+QMainWindow,
+QDialog,
+QMessageBox {
+    background-color: #141517;
+    color: #E3E5E8;
+    font-family: "Segoe UI", "Inter", sans-serif;
+    font-size: 14px;
+}
+
+QWidget {
+    background-color: transparent;
+    color: #E3E5E8;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+QLabel {
+    color: #E3E5E8;
+}
+
+QLabel[role="muted"] {
+    color: #80848E;
+}
+
+QLabel[role="dim"] {
+    color: #6F737D;
+}
+
+QLabel[role="success"] {
+    color: #23A559;
+}
+
+QLabel[role="warning"] {
+    color: #F0B232;
+}
+
+QLabel[role="danger"] {
+    color: #DA373C;
+}
+
+QLabel#panel_title {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+QLabel#section_label {
+    color: #8A94A6;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-top: 6px;
+    padding-bottom: 2px;
+}
+
+
+/* =========================================================
+   MAIN PANELS / FRAMES
+========================================================= */
+
+QFrame {
+    border: none;
+    background-color: #1E1F22;
+}
+
+QFrame[role="flat"] {
+    background-color: #1E1F22;
+    border: none;
+}
+
+QFrame[role="card"] {
+    background-color: #2B2D31;
+    border-radius: 8px;
+}
+
+QFrame[role="viewport"] {
+    background-color: #111214;
+    border: 1px solid #313338;
+    border-radius: 8px;
+}
+
+
+/* Specific panels */
+
+QFrame#top_status_bar {
+    background-color: #1E1F22;
+    border-bottom: 1px solid #313338;
+}
+
+QFrame#progress_runtime_bar {
+    background-color: #1E1F22;
+    border-top: 1px solid #313338;
+}
+
+QFrame#right_action_panel {
+    background-color: #1E1F22;
+    border-left: 1px solid #313338;
+}
+
+QFrame#viewport_3d {
+    background-color: #111214;
+    border: 1px solid #313338;
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   PUSH BUTTONS
+========================================================= */
+
+QPushButton {
+    background-color: #313338;
+    color: #E3E5E8;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 34px;
+}
+
+QPushButton:hover {
+    background-color: #404249;
+}
+
+QPushButton:pressed {
+    background-color: #2B2D31;
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+
+QPushButton:disabled {
+    background-color: #2B2D31;
+    color: #666A73;
+}
+
+
+/* Inline button */
+
+QPushButton[role="inline"] {
+    min-height: 34px;
+    max-height: 34px;
+    padding: 0px 16px;
+    background-color: #313338;
+    color: #E3E5E8;
+    font-size: 13px;
+    border-radius: 6px;
+}
+
+QPushButton[role="inline"]:hover {
+    background-color: #4F545C;
+}
+
+
+/* Action buttons:
+   Load Scan, Edge AI Mask, Build Point Cloud,
+   Filter Point Cloud, Build Surface Map, Estimate Normals
+*/
+
+QPushButton[role="action"] {
+    background-color: #0D6E66;
+    color: #FFFFFF;
+}
+
+QPushButton[role="action"]:hover {
+    background-color: #0A5751;
+}
+
+QPushButton[role="action"]:pressed {
+    background-color: #084843;
+}
+
+
+/* Primary buttons:
+   Generate Zigzag Path, Generate Contour Path, Export Results
+*/
+
+QPushButton[role="primary"] {
+    background-color: #005C9E;
+    color: #FFFFFF;
+}
+
+QPushButton[role="primary"]:hover {
+    background-color: #004B82;
+}
+
+QPushButton[role="primary"]:pressed {
+    background-color: #003B66;
+}
+
+
+/* Danger buttons:
+   Reserved for stop/error/reset actions if needed later
+*/
+
+QPushButton[role="danger"] {
+    background-color: #B3261E;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 14px;
+    min-height: 42px;
+}
+
+QPushButton[role="danger"]:hover {
+    background-color: #8C1D18;
+}
+
+QPushButton[role="danger"]:pressed {
+    background-color: #6F1713;
+}
+
+
+/* Navigation buttons:
+   Optional bottom bar if added later
+*/
+
+QPushButton[role="nav"] {
+    min-height: 40px;
+    min-width: 100px;
+    background-color: #2B2D31;
+    color: #B5BAC1;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+QPushButton[role="nav"]:hover {
+    background-color: #383A40;
+    color: #FFFFFF;
+}
+
+QPushButton[role="nav_active"] {
+    min-height: 40px;
+    min-width: 100px;
+    background-color: #005C9E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+QProgressBar {
+    background-color: #141517;
+    border: 1px solid #313338;
+    border-radius: 4px;
+    text-align: center;
+    color: #E3E5E8;
+    font-weight: 700;
+    min-height: 18px;
+}
+
+QProgressBar::chunk {
+    background-color: #23A559;
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   DIALOG & MESSAGE BOX
+========================================================= */
+
+QMessageBox {
+    background-color: #1E1F22;
+}
+
+QMessageBox QLabel {
+    color: #E3E5E8;
+}
+
+QMessageBox QPushButton {
+    min-width: 80px;
+    min-height: 36px;
+    background-color: #005C9E;
+    color: #FFFFFF;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #004B82;
+}
+
+
+/* Dialog shell */
+
+#dialog_shell {
+    background-color: #1E1F22;
+    border: 1px solid #4F545C;
+    border-radius: 8px;
+}
+
+#dialog_title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #E3E5E8;
+}
+
+#btn_dialog_close {
+    background-color: transparent;
+    color: #80848E;
+    min-height: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    border-radius: 16px;
+    padding: 0px;
+    font-size: 16px;
+}
+
+#btn_dialog_close:hover {
+    background-color: #DA373C;
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+   Used later for processing parameters:
+   - voxel size
+   - normal radius
+   - path spacing
+   - Edge AI threshold
+========================================================= */
+
+QLineEdit,
+QComboBox,
+QSpinBox,
+QDoubleSpinBox {
+    background-color: #141517;
+    border: 1px solid #313338;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #E3E5E8;
+    min-height: 34px;
+}
+
+QLineEdit:focus,
+QComboBox:focus,
+QSpinBox:focus,
+QDoubleSpinBox:focus {
+    border: 1px solid #005C9E;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 24px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1E1F22;
+    border: 1px solid #4F545C;
+    selection-background-color: #005C9E;
+    color: #E3E5E8;
+    outline: none;
+}
+
+
+/* =========================================================
+   SLIDER
+   Used later for interactive parameters:
+   - path spacing
+   - point size
+   - normal length
+========================================================= */
+
+QSlider::groove:horizontal {
+    border-radius: 3px;
+    height: 6px;
+    background: #313338;
+}
+
+QSlider::handle:horizontal {
+    background: #E3E5E8;
+    width: 16px;
+    height: 16px;
+    margin: -5px 0;
+    border-radius: 8px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #00A8FC;
+}
+
+QSlider::sub-page:horizontal {
+    background: #005C9E;
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   CHECKBOX
+   Used later for viewport layers:
+   - Show Raw Point Cloud
+   - Show Clean Point Cloud
+   - Show Surface Map
+   - Show Normals
+   - Show Zigzag
+   - Show Contour
+========================================================= */
+
+QCheckBox {
+    color: #E3E5E8;
+    spacing: 8px;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #4F545C;
+    background-color: #141517;
+}
+
+QCheckBox::indicator:hover {
+    border: 1px solid #00A8FC;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #005C9E;
+    border: 1px solid #005C9E;
+}
+
+
+/* =========================================================
+   LIST WIDGET / LOG VIEW
+   Used for processing logs:
+   - Load scan
+   - Edge AI mask
+   - Point cloud filter
+   - Surface map build
+   - Path generation
+========================================================= */
+
+QListWidget {
+    background-color: #141517;
+    border: 1px solid #313338;
+    border-radius: 6px;
+    padding: 4px;
+    outline: none;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 13px;
+}
+
+QListWidget::item {
+    padding: 8px;
+    border-radius: 4px;
+    color: #E3E5E8;
+}
+
+QListWidget::item:alternate {
+    background-color: #1E1F22;
+}
+
+QListWidget::item:selected {
+    background-color: #005C9E;
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+QScrollBar:vertical {
+    background: #1E1F22;
+    width: 10px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #4F545C;
+    min-height: 24px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #6F737D;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background: #1E1F22;
+    height: 10px;
+    margin: 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #4F545C;
+    min-width: 24px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #6F737D;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+QToolTip {
+    background-color: #2B2D31;
+    color: #E3E5E8;
+    border: 1px solid #4F545C;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+/* =========================================================
+   SECTION CARD
+========================================================= */
+
+QFrame#section_card {
+    background-color: #2B2D31;
+    border: 1px solid #313338;
+    border-radius: 8px;
+}
+
+QLabel#section_card_title {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   INFO CARD
+========================================================= */
+
+QWidget#info_card {
+    background-color: #2B2D31;
+    border: 1px solid #313338;
+    border-radius: 8px;
+}
+
+QLabel#info_card_title {
+    color: #8A94A6;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+QLabel#info_card_value {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+QLabel#info_card_value[role="muted"] {
+    color: #80848E;
+}
+
+QLabel#info_card_value[role="success"] {
+    color: #23A559;
+}
+
+QLabel#info_card_value[role="warning"] {
+    color: #F0B232;
+}
+
+QLabel#info_card_value[role="danger"] {
+    color: #DA373C;
+}
+
+/* =========================================================
+   STATUS LIGHT
+========================================================= */
+
+QWidget#status_light {
+    background-color: transparent;
+}
+
+QLabel#status_light_label {
+    color: #E3E5E8;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+QWidget#form_row {
+    background-color: transparent;
+}
+
+QLabel#form_row_label {
+    color: #B5BAC1;
+    font-size: 13px;
+    font-weight: 600;
+}

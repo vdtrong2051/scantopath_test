@@ -1,0 +1,84 @@
+BÁO CÁO XUẤT KẾT QUẢ SCAN-TO-PATH
+====================================
+
+[THÔNG TIN CHUNG]
+Mã export      : PJ1_20260516_002_FILE_SAMPLE_OK
+Thời gian xuất : 2026-05-16 08:53:36
+Thư mục        : data\exports\PJ1_20260516_002_FILE_SAMPLE_OK
+Chế độ đầu vào : FILE
+Tên mẫu vật    : SAMPLE
+Trạng thái     : OK
+
+[QUY TRÌNH XỬ LÝ]
+1. Nạp / Quét mẫu 3D
+2. Lọc nhiễu đám mây điểm
+3. Tính pháp tuyến bề mặt
+4. Tạo bản đồ bề mặt 3D
+5. Sinh đường Zigzag
+6. Xuất kết quả
+
+[BẢN ĐỒ BỀ MẶT 3D]
+Phương pháp tạo mesh      : poisson
+Số điểm đầu vào           : 11797
+Số điểm dùng để dựng mesh : 11779
+Số đỉnh mesh              : 17962
+Số mặt tam giác           : 35453
+Tâm mô hình               : [17.907154083251953, 9.768304824829102, -15.661017608642581]
+Kích thước mô hình        : [476.4365463256836, 444.83356857299805, 277.5885299682617]
+
+[ĐƯỜNG DẪN ZIGZAG]
+Phương pháp sinh đường : safe_mesh_slicing
+Số điểm đường dẫn      : 4057
+Số dải quét            : 46
+Số đoạn đường dẫn      : 93
+Chiều dài xấp xỉ       : 14326.692057
+Khoảng cách dải quét   : 9.529903
+Khoảng cách lấy mẫu    : 3.811961
+Ngưỡng tách đoạn       : 26.207234
+
+[DANH SÁCH FILE]
+1. 00_summary.txt   - Báo cáo tóm tắt dạng TXT
+2. 00_summary.json  - Metadata dạng JSON
+3. 01_surface_mesh.ply  - Mesh/bản đồ bề mặt 3D
+4. 02_zigzag_path.csv   - Đường dẫn Zigzag dạng CSV
+
+[GHI CHÚ]
+- File CSV chứa các cột: segment_id, point_id, x, y, z, nx, ny, nz.
+- x, y, z là tọa độ điểm đường dẫn.
+- nx, ny, nz là vector pháp tuyến tại điểm đường dẫn.
+- Dữ liệu này dùng cho bước mô phỏng hoặc phát triển điều khiển robot phun sơn sau này.
+
+
+THÔNG SỐ HÌNH HỌC VẬT THỂ 3D
+==========================================
+Nguồn đo: SURFACE MESH
+
+1. Dữ liệu hình học
+- Số điểm point cloud: 11.797
+- Số đỉnh mesh: 17.962
+- Số mặt tam giác mesh: 35.453
+
+2. Kích thước hộp bao AABB
+- Size X: 476.4365 m | 47643.65 cm | 476436.5 mm
+- Size Y: 444.8336 m | 44483.36 cm | 444833.6 mm
+- Size Z: 277.5885 m | 27758.85 cm | 277588.5 mm
+- Thể tích hộp bao gần đúng: 58830716.521518 m³ | 58830716521517.94 cm³
+
+3. Kích thước hộp bao định hướng OBB
+- Size X: 665.2078 m | 66520.78 cm | 665207.8 mm
+- Size Y: 185.4674 m | 18546.74 cm | 185467.4 mm
+- Size Z: 185.4420 m | 18544.20 cm | 185442.0 mm
+- Thể tích hộp bao định hướng: 22878797.108157 m³ | 22878797108156.82 cm³
+
+4. Diện tích bề mặt gần đúng
+- Diện tích: 178880.141054 m²
+- Diện tích: 1788801410.54 cm²
+- Diện tích: 178880141054.00 mm²
+
+5. Ghi chú
+- Đơn vị tính dựa trên scale point cloud. Nếu depth camera dùng meter thì kết quả m/cm/mm là hợp lệ.
+- Kích thước là kết quả gần đúng từ point cloud/mesh, không phải kích thước CAD chuẩn tuyệt đối.
+- File mesh/point cloud có thể chỉnh sửa trong Blender, MeshLab, CloudCompare, nhưng chưa phải CAD tham số như SolidWorks.
+
+6. Trạng thái
+- Đã đo thông số hình học 3D: X=47643.65 cm, Y=44483.36 cm, Z=27758.85 cm, Area=1788801410.54 cm²

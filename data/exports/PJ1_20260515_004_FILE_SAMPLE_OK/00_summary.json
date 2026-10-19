@@ -1,0 +1,67 @@
+{
+    "project": {
+        "code": "PJ1",
+        "name": "Scan-to-Path"
+    },
+    "export": {
+        "id": "PJ1_20260515_004_FILE_SAMPLE_OK",
+        "time": "2026-05-15 15:51:08",
+        "folder": "data\\exports\\PJ1_20260515_004_FILE_SAMPLE_OK",
+        "input_mode": "FILE",
+        "object_name": "SAMPLE",
+        "status": "OK"
+    },
+    "pipeline": [
+        "Nạp / Quét mẫu 3D",
+        "Lọc nhiễu đám mây điểm",
+        "Tính pháp tuyến bề mặt",
+        "Tạo bản đồ bề mặt 3D",
+        "Sinh đường Zigzag",
+        "Xuất kết quả"
+    ],
+    "surface_map": {
+        "method": "poisson",
+        "input_point_count": 23682,
+        "working_point_count": 23551,
+        "vertex_count": 22747,
+        "triangle_count": 44983,
+        "bounds_min": [
+            -954.4369487276458,
+            -2268.8180782039817,
+            -711.1263967964825
+        ],
+        "bounds_max": [
+            958.5315543514592,
+            2278.3777824015656,
+            628.3249724173448
+        ],
+        "center": [
+            2.047302811906718,
+            4.779852098791935,
+            -41.40071218956882
+        ],
+        "size": [
+            1912.9685030791052,
+            4547.195860605547,
+            1339.4513692138273
+        ]
+    },
+    "zigzag_path": {
+        "method": "safe_mesh_slicing",
+        "path_count": 5650,
+        "line_count": 45,
+        "segment_count": 164,
+        "path_length": 309161.638468477,
+        "path_spacing": 90.94838842682505,
+        "point_step": 36.37935537073002,
+        "max_gap": 250.10806817376886
+    },
+    "files": {
+        "summary_txt": "00_summary.txt",
+        "summary_json": "00_summary.json",
+        "surface_mesh": "01_surface_mesh.ply",
+        "zigzag_path": "02_zigzag_path.csv",
+        "clean_cloud": null,
+        "normal_cloud": null
+    }
+}

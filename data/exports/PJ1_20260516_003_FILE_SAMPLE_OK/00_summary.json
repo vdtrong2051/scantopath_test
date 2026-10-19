@@ -1,0 +1,111 @@
+{
+    "project": {
+        "code": "PJ1",
+        "name": "Scan-to-Path"
+    },
+    "export": {
+        "id": "PJ1_20260516_003_FILE_SAMPLE_OK",
+        "time": "2026-05-16 10:13:42",
+        "folder": "data\\exports\\PJ1_20260516_003_FILE_SAMPLE_OK",
+        "input_mode": "FILE",
+        "object_name": "SAMPLE",
+        "status": "OK"
+    },
+    "pipeline": [
+        "Nạp / Quét mẫu 3D",
+        "Lọc nhiễu đám mây điểm",
+        "Tính pháp tuyến bề mặt",
+        "Tạo bản đồ bề mặt 3D",
+        "Sinh đường Zigzag",
+        "Xuất kết quả"
+    ],
+    "surface_map": {
+        "method": "poisson",
+        "input_point_count": 11797,
+        "working_point_count": 11779,
+        "vertex_count": 17962,
+        "triangle_count": 35452,
+        "bounds_min": [
+            -220.31111907958984,
+            -212.64847946166992,
+            -154.45528259277344
+        ],
+        "bounds_max": [
+            256.12542724609375,
+            232.18508911132812,
+            123.13324737548828
+        ],
+        "center": [
+            17.907154083251953,
+            9.768304824829102,
+            -15.661017608642581
+        ],
+        "size": [
+            476.4365463256836,
+            444.83356857299805,
+            277.5885299682617
+        ]
+    },
+    "zigzag_path": {
+        "method": "safe_mesh_slicing",
+        "path_count": 4056,
+        "line_count": 46,
+        "segment_count": 93,
+        "path_length": 14326.251548270975,
+        "path_spacing": 9.52990318381516,
+        "point_step": 3.8119612735260637,
+        "max_gap": 26.207233755491686
+    },
+    "measurement": {
+        "source_name": "SURFACE MESH",
+        "point_count": 11797,
+        "mesh_vertex_count": 17962,
+        "mesh_triangle_count": 35452,
+        "aabb": {
+            "min_x_m": -220.31111907958984,
+            "min_y_m": -212.64847946166992,
+            "min_z_m": -154.45528259277344,
+            "max_x_m": 256.12542724609375,
+            "max_y_m": 232.18508911132812,
+            "max_z_m": 123.13324737548828,
+            "size_x_m": 476.4365463256836,
+            "size_y_m": 444.83356857299805,
+            "size_z_m": 277.5885299682617,
+            "center_x_m": 17.907154083251953,
+            "center_y_m": 9.768304824829102,
+            "center_z_m": -15.661017608642581,
+            "volume_bbox_m3": 58830716.52151794
+        },
+        "obb": {
+            "min_x_m": -309.61508060202,
+            "min_y_m": -98.6054414431862,
+            "min_z_m": -99.14197545037227,
+            "max_x_m": 355.59185708678507,
+            "max_y_m": 86.86154389954304,
+            "max_z_m": 86.30153393851428,
+            "size_x_m": 665.206937688805,
+            "size_y_m": 185.46698534272923,
+            "size_z_m": 185.44350938888655,
+            "center_x_m": 22.98838824238255,
+            "center_y_m": -5.871948771821579,
+            "center_z_m": -6.4202207559289945,
+            "volume_bbox_m3": 22878893.68625104
+        },
+        "surface_area_m2": 178875.81188859887,
+        "surface_area_cm2": 1788758118.8859887,
+        "surface_area_mm2": 178875811888.59888,
+        "has_point_cloud": true,
+        "has_surface_mesh": true,
+        "has_surface_area": true,
+        "unit_note": "Đơn vị tính dựa trên scale point cloud. Nếu depth camera dùng meter thì kết quả m/cm/mm là hợp lệ.",
+        "message": "Đã đo thông số hình học 3D: X=47643.65 cm, Y=44483.36 cm, Z=27758.85 cm, Area=1788758118.89 cm²"
+    },
+    "files": {
+        "summary_txt": "00_summary.txt",
+        "summary_json": "00_summary.json",
+        "surface_mesh": "01_surface_mesh.ply",
+        "zigzag_path": "02_zigzag_path.csv",
+        "clean_cloud": null,
+        "normal_cloud": null
+    }
+}

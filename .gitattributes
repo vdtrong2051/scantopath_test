@@ -1,0 +1,2 @@
+data/pointcloud_raw/1_raw_test/4_Mercedes-Benz_CLK_430_Convertible.ply filter=lfs diff=lfs merge=lfs -text
+data/pointcloud_raw/1_raw_test/8_Lion_statue.ply filter=lfs diff=lfs merge=lfs -text
